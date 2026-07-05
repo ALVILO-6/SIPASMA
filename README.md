@@ -1,0 +1,116 @@
+# SIPASMA — Sistem Penjaringan Aspirasi Mahasiswa
+
+> A web-based platform for collecting and managing student aspirations at FTI UKSW, built as an undergraduate thesis project.
+
+---
+
+## About
+
+SIPASMA replaces fragmented communication channels (chat groups, direct messages, etc.) with a centralized, organized, and transparent platform. Students can submit aspirations, track their progress anonymously, and the advocacy commission team can manage, assign, and respond to each one through a role-based dashboard.
+
+Research derived from this project has been accepted for publication and is scheduled for release in **June 2027**.
+
+---
+
+## Features
+
+- **Aspiration Submission Form** — validates major code (FTI UKSW program codes) and active enrollment status before allowing submission.
+- **Daily Submission Limit** — prevents spam by limiting one submission per NIM/IP per day.
+- **Anonymous Aspiration Tracking** — students can track their aspiration status using a unique 9-character tracking code, no login required.
+- **Role-Based Access Control (RBAC)** — separate access levels for Chairperson (`Ketua`), Secretary (`Sekretaris`), and Staff (`Fungsionaris`).
+- **Aspiration Management Dashboard** — assign person-in-charge (PJ), update status, and provide official responses.
+- **Statistical Data Visualization** — pie chart by category and line graph of monthly submissions for data-driven decision-making.
+- **FAQ Page** — frequently asked questions grouped by category.
+- **Organizational Structure Page** — displays the advocacy commission team.
+
+---
+
+## Tech Stack
+
+| Layer      | Technology                                      |
+|------------|-------------------------------------------------|
+| Backend    | PHP 8.2, Laravel 12                             |
+| Frontend   | Blade Templating Engine, CSS, jQuery            |
+| Database   | MySQL                                           |
+
+---
+
+## Prerequisites
+
+- PHP >= 8.2
+- Composer
+- MySQL
+
+---
+
+## Installation
+
+**1. Clone the repository**
+```bash
+git clone https://github.com/ALVILO-6/SIPASMA.git
+cd SIPASMA
+```
+
+**2. Install PHP dependencies**
+```bash
+composer install
+```
+
+**3. Configure environment**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+Edit `.env` and set your database connection:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sipasma
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
+
+**4. Run migrations and seeders**
+```bash
+php artisan migrate --seed
+```
+
+**5. Start the development server**
+```bash
+php artisan serve
+```
+
+App will be available at `http://localhost:8000`.
+
+---
+
+## Database Structure
+
+| Table            | Description                                      |
+|------------------|--------------------------------------------------|
+| `advo_aspirasi`  | Submitted aspirations with tracking code & status |
+| `advo_kategori`  | Aspiration categories                            |
+| `advo_status`    | Status codes (e.g., pending, in-progress, done)  |
+| `advo_struktur`  | Advocacy commission members (RBAC users)         |
+| `advo_faq`       | FAQ entries grouped by category                  |
+| `users`          | Laravel default auth users                       |
+
+---
+
+## NIM Validation Rules
+
+The aspiration form validates student NIM (ID number) against the following rules:
+- Must be exactly 9 digits
+- First 2 digits must match a registered FTI UKSW program code
+- Enrollment year (digits 3–6) must fall within an active 7-year study window
+- Last 3 digits must not be `000`
+
+Supported program codes: `56` (D3 TI), `60` (S1 Humas), `67` (S1 TI), `68` (S1 SI), `69` (S1 DKV), `71` (S1 PTIK), `74` (S1 PSI), `84` (S1 BD).
+
+---
+
+## License
+
+MIT License — feel free to use or reference this project.
