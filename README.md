@@ -82,7 +82,63 @@ php artisan migrate --seed
 php artisan serve
 ```
 
-App will be available at `http://localhost:8000`.
+App will be available at `http://127.0.0.1:8000`.
+
+---
+
+## Project Architecture
+
+```
+sipasma/
+├── app/
+│   └── Http/
+│       ├── Controllers/
+│       │   ├── AdminController.php         # Dashboard, aspiration management, charts
+│       │   ├── AdvoController.php          # Public pages, form, tracking, FAQ, structure
+│       │   └── AuthController.php          # Login, logout, NIM validation, password reset
+│       └── Middleware/
+│           ├── AdvoMiddleware.php          # Role-based access control (RBAC)
+│           └── AdvoCheckSession.php        # Session validation guard
+│
+├── bootstrap/
+│   └── app.php                             # Middleware registration
+│
+├── database/
+│   ├── migrations/
+│   │   ├── advo_aspirasi.php               # Aspirations table
+│   │   ├── advo_kategori.php               # Aspiration categories table
+│   │   ├── advo_status.php                 # Status codes table
+│   │   ├── advo_struktur.php               # Commission members table
+│   │   ├── advo_faq.php                    # FAQ entries table
+│   │   └── reset_password.php              # Password reset tokens table
+│   └── seeders/
+│       ├── RunSeeder.php                   # Master seeder entry point
+│       └── advo_seeders/
+│           ├── AdvoAspirasiSeeder.php
+│           ├── AdvoKategoriSeeder.php
+│           ├── AdvoStatusSeeder.php
+│           ├── AdvoStrukturSeeder.php
+│           └── AdvoFAQSeeder.php
+│
+├── public/                                 # Static assets & image storage
+│   ├── anggota/                            # Commission member photos
+│   │   └── Anggota1-9.png
+│   └── icons/                             # UI icons for all pages
+│
+├── resources/
+│   └── views/
+│       ├── Advokasi.blade.php              # Landing/home page
+│       ├── Form.blade.php                  # Aspiration submission form
+│       ├── Struktur.blade.php              # Commission organizational structure
+│       ├── FAQ.blade.php                   # FAQ page
+│       ├── Dashboard.blade.php             # Admin management dashboard
+│       ├── Done.blade.php                  # Completed aspirations list
+│       ├── Login.blade.php                 # Login page
+│       └── ForgotPassword.blade.php        # Password reset page
+│
+└── routes/
+    └── web.php                             # All routes: public, auth, admin (GET & POST)
+```
 
 ---
 
