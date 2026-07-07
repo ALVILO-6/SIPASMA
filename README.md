@@ -90,12 +90,12 @@ App will be available at `http://localhost:8000`.
 
 | Table            | Description                                      |
 |------------------|--------------------------------------------------|
-| `advo_aspirasi`  | Submitted aspirations with tracking code & status |
+| `advo_aspirasi`  | Submitted aspirations with tracking code & status|
 | `advo_kategori`  | Aspiration categories                            |
 | `advo_status`    | Status codes (e.g., pending, in-progress, done)  |
 | `advo_struktur`  | Advocacy commission members (RBAC users)         |
 | `advo_faq`       | FAQ entries grouped by category                  |
-| `users`          | Laravel default auth users                       |
+| `reset_password` | Temporary storage for password reset             |
 
 ---
 
@@ -111,6 +111,4 @@ Supported program codes: `56` (D3 TI), `60` (S1 Humas), `67` (S1 TI), `68` (S1 S
 
 ---
 
-## License
-
-MIT License — feel free to use or reference this project.
+Any suggestions and feedbacks are welcome. Feel free to share your thoughts to help improve this project. Thanks for checking out!
