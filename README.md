@@ -133,8 +133,7 @@ sipasma/
 │       ├── FAQ.blade.php                   # FAQ page
 │       ├── Dashboard.blade.php             # Admin management dashboard
 │       ├── Done.blade.php                  # Completed aspirations list
-│       ├── Login.blade.php                 # Login page
-│       └── ForgotPassword.blade.php        # Password reset page
+│       └── Login.blade.php                 # Login page
 │
 └── routes/
     └── web.php                             # All routes: public, auth, admin (GET & POST)
