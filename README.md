@@ -27,11 +27,11 @@ Research derived from this project has been accepted for publication and is sche
 
 ## Tech Stack
 
-| Layer      | Technology                                      |
-|------------|-------------------------------------------------|
-| Backend    | PHP 8.2, Laravel 12                             |
-| Frontend   | Blade Templating Engine, CSS, jQuery            |
-| Database   | MySQL                                           |
+| Layer      | Technology                                                                                                                                                                                                                      |
+|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Backend    | ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white) ![Laravel](https://img.shields.io/badge/Laravel-B71C1C?style=flat&logo=laravel&logoColor=white)                                             |
+| Frontend   | ![Blade](https://img.shields.io/badge/Blade-B71C1C?style=flat&logo=laravel&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css&logoColor=white) ![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=flat&logo=jquery&logoColor=white) |
+| Database   | ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)                                                                                                                                       |
 
 ---
 
