@@ -1,4 +1,4 @@
-# SIPASMA — Sistem Penjaringan Aspirasi Mahasiswa
+# Student Aspiration Gathering System
 
 > A web-based platform for collecting and managing student aspirations at FTI UKSW, built as an undergraduate thesis project.
 
@@ -6,7 +6,7 @@
 
 ## About
 
-SIPASMA replaces fragmented communication channels (chat groups, direct messages, etc.) with a centralized, organized, and transparent platform. Students can submit aspirations, track their progress anonymously, and the advocacy commission team can manage, assign, and respond to each one through a role-based dashboard.
+This web application replaces fragmented communication channels (chat groups, direct messages, etc.) with a centralized, organized, and transparent platform. Students can submit aspirations, track their progress anonymously, and the advocacy commission team can manage, assign, and respond to each one through a role-based dashboard.
 
 Research derived from this project has been accepted for publication and is scheduled for release in **June 2027**.
 
